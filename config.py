@@ -1,0 +1,3 @@
+﻿LOG_FILE = "app.log.json"
+MAX_LOGS = 1000
+VALID_LEVELS = ["INFO", "WARNING", "ERROR"]
