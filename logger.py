@@ -13,7 +13,10 @@ def log_entry(message, level="INFO"):
     logs = []
     if os.path.exists(log_file):
         with open(log_file) as f:
-            logs = json.load(f)
+            try:
+                logs = json.load(f)
+            except json.JSONDecodeError:
+                logs = []
     logs.append(entry)
     with open(log_file, "w") as f:
         json.dump(logs, f, indent=2)
